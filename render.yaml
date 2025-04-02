@@ -1,17 +1,17 @@
 databases:
   - name: database
-    databaseName: startsign-db
+    databaseName: ssdb
     user: bullet_train
     plan: free
 
 services:
   - type: redis
-    name: startsign-redis
+    name: ssredis
     ipAllowList: []
     plan: free
     maxmemoryPolicy: noeviction
   - type: web
-    name: startsign-web
+    name: ssweb
     plan: free
     env: ruby
     buildCommand: "RUN_MIGRATIONS=1 ./bin/render-build.sh"
@@ -28,7 +28,7 @@ services:
           property: connectionString
       - fromGroup: settings
   - type: worker
-    name: worker
+    name: ssworker
     plan: free
     env: ruby
     buildCommand: "./bin/render-build.sh"

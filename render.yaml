@@ -1,5 +1,5 @@
 databases:
-  - name: database
+  - name: ssodb
     databaseName: ssodb
     user: bullet_train
     plan: free

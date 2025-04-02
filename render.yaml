@@ -1,17 +1,17 @@
 databases:
   - name: database
-    databaseName: database
+    databaseName: startsign-db
     user: bullet_train
     plan: free
 
 services:
   - type: redis
-    name: redis
+    name: startsign-redis
     ipAllowList: []
     plan: free
     maxmemoryPolicy: noeviction
   - type: web
-    name: web
+    name: startsign-web
     plan: free
     env: ruby
     buildCommand: "RUN_MIGRATIONS=1 ./bin/render-build.sh"
